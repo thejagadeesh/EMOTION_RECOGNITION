@@ -3,4 +3,5 @@ transformers
 plotly
 wordcloud
 matplotlib
-tensorflow  # or torch
+tensorflow
+tf-keras
