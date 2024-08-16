@@ -7,7 +7,7 @@ import io
 
 # Initialize the text classification pipeline with the specified model
 try:
-    classifier = pipeline(task="text-classification", model="SamLowe/roberta-base-go_emotions", top_k=None)
+    classifier = pipeline(task="text-classification", model=r"JAGADEESH51/TEXT_EMOTION_RECOGNITION", top_k=None)
 except Exception as e:
     st.error(f"Error loading model: {e}")
     st.stop()
@@ -126,7 +126,7 @@ st.session_state.score_threshold = score_threshold
 
 # Analyze sentences section
 if page == "Analyze Sentences":
-    user_input = st.text_area("Enter the sentences to analyze:", "")
+    user_input = st.text_area("Enter sentences to analyze:", "")
 
     if st.button("Analyze"):
         if user_input:
