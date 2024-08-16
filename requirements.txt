@@ -1,0 +1,5 @@
+streamlit
+transformers
+plotly
+wordcloud
+matplotlib
