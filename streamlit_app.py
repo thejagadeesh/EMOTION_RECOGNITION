@@ -7,7 +7,7 @@ import io
 
 # Initialize the text classification pipeline with the specified model
 try:
-    classifier = pipeline(task="text-classification", model="JAGADEESH51/TEXT_EMOTION_RECOGNITION", top_k=None)
+    classifier = pipeline(task="text-classification", model=r"JAGADEESH51/TEXT_EMOTION_RECOGNITION", top_k=None)
 except Exception as e:
     st.error(f"Error loading model: {e}")
     st.stop()
@@ -40,7 +40,7 @@ def classify_and_update(sentences):
 # Function to create an interactive bar chart
 def plot_emotion_scores(labels, scores, sentence):
     fig = go.Figure()
-    colors = ['#636EFA', '#EF553B', '#00CC96', '#AB63FA', '#FFA15A']
+    colors = ['#636EFA', '#EF553B', '#00CC96', '#AB63FA', '#FFA15A', '#19D3F3', '#FF6692', '#B6E880', '#FF97FF', '#F0F0F0']
     fig.add_trace(go.Bar(
         x=labels,
         y=scores,
@@ -86,7 +86,7 @@ def plot_radar_chart(labels, scores, sentence):
 # Function to create a refined word cloud
 def plot_word_cloud(emotions):
     text = ' '.join(emotions)
-    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+    wordcloud = WordCloud(width=800, height=400, background_color='white', colormap='viridis').generate(text)
 
     fig, ax = plt.subplots(figsize=(8, 4))
     ax.imshow(wordcloud, interpolation='bilinear')
